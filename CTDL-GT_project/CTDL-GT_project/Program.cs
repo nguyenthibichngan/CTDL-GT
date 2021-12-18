@@ -74,7 +74,7 @@ namespace CTDL_GT_project
             header = new Node(new Phonebook("00", "null", "0000000000", "xxx@gmail.com", "www.facebook.com/null", "00/00/0000"));
         }
 
-        // CHỨC NĂNG CHÈN
+        // Chức năng chèn
         private Node Find(string input)
         {
             Node current = header;
@@ -129,7 +129,7 @@ namespace CTDL_GT_project
             Add(input);
         }
 
-        // CHỨC NĂNG XÓA
+        // Chức năng xóa
         public void Remove(List<Phonebook> recyclebin, string input)
         {
             Node current = Find(input);
@@ -148,7 +148,7 @@ namespace CTDL_GT_project
             recyclebin.Add(current.element);
         }
 
-        // CHỨC NĂNG SẮP XẾP 
+        // Chức năng sắp xếp
         private void Swap(ref Phonebook a, ref Phonebook b)
         {
             Phonebook temp = a;
@@ -157,7 +157,7 @@ namespace CTDL_GT_project
         }
         private void SortId(DoubleLinkedList dlist)
         {
-            Console.WriteLine("\nDanh bạ đã sắp xếp theo Id: ");
+            Console.WriteLine("Danh bạ đã sắp xếp theo Id: ");
             for (Node k = dlist.header.flink; k.flink != null; k = k.flink)
             {
                 for (Node h = k.flink; h != null; h = h.flink)
@@ -172,7 +172,7 @@ namespace CTDL_GT_project
         }
         private void SortName(DoubleLinkedList dlist)
         {
-            Console.WriteLine("\nDanh bạ đã sắp xếp theo Nickname: ");
+            Console.WriteLine("Danh bạ đã sắp xếp theo Nickname: ");
             for (Node k = dlist.header.flink; k.flink != null; k = k.flink)
             {
                 for (Node h = k.flink; h != null; h = h.flink)
@@ -188,9 +188,9 @@ namespace CTDL_GT_project
         public void Sort(DoubleLinkedList pbook)
         {
         trinhne:
-            Console.WriteLine("[1] Sắp xếp theo Id");
-            Console.WriteLine("[2] Sắp xếp theo Tên");
-            Console.Write("\nNhập lựa chọn của bạn: ");
+            Console.WriteLine("1. Sắp xếp theo Id");
+            Console.WriteLine("2. Sắp xếp theo Tên");
+            Console.Write("Nhập lựa chọn của bạn: ");
             string input = Console.ReadLine();
             switch (input)
             {
@@ -231,7 +231,7 @@ namespace CTDL_GT_project
         {
             Console.Clear();
             Print();
-            Console.Write("\nNhập ID/Nickname/SDDT/EMail/Facebook của liên lạc cần sửa: ");
+            Console.Write("\nNhập trường bất kì của liên lạc cần sửa: ");
             string input = Console.ReadLine();
             Node current = Find(input);
             if (current == null)
@@ -246,12 +246,12 @@ namespace CTDL_GT_project
             current.element = newdb;
         }
 
-        // chức năng tìm kiếm
+        // Chức năng tìm kiếm
         public void FindPlus()
         {
         FindPlus:
             Console.Clear();
-            Console.Write("\n \n(-) Tìm kiếm nhanh\t(Phím 1)\n(-) Tìm kiếm Id \t(Phím 2)\n(-) Tìm kiếm Tên\t(Phím 3)\n(-) Tìm kiếm Số ĐT\t(Phím 4)\n(-) Tìm kiếm Email\t(Phím 5)\n(-) Tìm kiếm FaceBook\t(Phím 6)\n(-) Tìm kiếm Sinh Nhật\t(Phím 7)\n(-) Thoát\t(Phím 0)\n\nLựa chọn tìm kiếm: ");
+            Console.Write("\n \n(-) Tìm kiếm nhanh\t(Phím 1)\n(-) Tìm kiếm Id \t(Phím 2)\n(-) Tìm kiếm Tên\t(Phím 3)\n(-) Tìm kiếm Số ĐT\t(Phím 4)\n(-) Tìm kiếm Email\t(Phím 5)\n(-) Tìm kiếm FaceBook\t(Phím 6)\n(-) Tìm kiếm Sinh Nhật\t(Phím 7)\n(-) Thoát\t\t(Phím 0)\n\nLựa chọn tìm kiếm: ");
             string opts = Console.ReadLine();
 
             switch (opts)
@@ -275,7 +275,7 @@ namespace CTDL_GT_project
                             current = current.blink;
                         }
                         if (count == 0) Console.WriteLine("Không có kết quả phù hợp!!");
-                        Console.WriteLine("Nhấn [Enter] để tiếp tục");
+                        Console.WriteLine("Nhấn [Enter] để tiếp tục!");
                         Console.ReadKey();
                     }; goto FindPlus;
                 case "2":
@@ -295,8 +295,8 @@ namespace CTDL_GT_project
                             }
                             current = current.blink;
                         }
-
                         if (count == 0) Console.WriteLine("Không có kết quả phù hợp!!");
+                        Console.WriteLine("Nhấn [Enter] để tiếp tục!");
                         Console.ReadKey();
                     }; goto FindPlus;
                 case "3":
@@ -316,8 +316,8 @@ namespace CTDL_GT_project
                             }
                             current = current.blink;
                         }
-                        Console.ReadKey();
                         if (count == 0) Console.WriteLine("Không có kết quả phù hợp!!");
+                        Console.WriteLine("Nhấn [Enter] để tiếp tục!");
                         Console.ReadKey();
                     }; goto FindPlus;
                 case "4":
@@ -336,8 +336,8 @@ namespace CTDL_GT_project
                             }
                             current = current.blink;
                         }
-                        Console.ReadKey();
                         if (count == 0) Console.WriteLine("Không có kết quả phù hợp!!");
+                        Console.WriteLine("Nhấn [Enter] để tiếp tục!");
                         Console.ReadKey();
                     }; goto FindPlus;
                 case "5":
@@ -357,8 +357,8 @@ namespace CTDL_GT_project
                             }
                             current = current.blink;
                         }
-                        Console.ReadKey();
                         if (count == 0) Console.WriteLine("Không có kết quả phù hợp!!");
+                        Console.WriteLine("Nhấn [Enter] để tiếp tục!");
                         Console.ReadKey();
                     }; goto FindPlus;
                 case "6":
@@ -378,8 +378,8 @@ namespace CTDL_GT_project
                             }
                             current = current.blink;
                         }
-                        Console.ReadKey();
                         if (count == 0) Console.WriteLine("Không có kết quả phù hợp!!");
+                        Console.WriteLine("Nhấn [Enter] để tiếp tục!");
                         Console.ReadKey();
                     }; goto FindPlus;
                 case "7":
@@ -398,8 +398,8 @@ namespace CTDL_GT_project
                             }
                             current = current.blink;
                         }
-                        Console.ReadKey();
                         if (count == 0) Console.WriteLine("Không có kết quả phù hợp!!");
+                        Console.WriteLine("Nhấn [Enter] để tiếp tục!");
                         Console.ReadKey();
                     }; goto FindPlus;
                 default:
@@ -414,16 +414,17 @@ namespace CTDL_GT_project
             if (recyclebin.Count == 0)
             {
                 Console.WriteLine("\nThùng rác rỗng");
+                Console.WriteLine("Nhấn [Enter] để tiếp tục!");
                 return;
             }
 
-            Console.WriteLine("Thùng rác: ");
+            Console.WriteLine("Các liên lạc đã xóa: ");
             foreach (Phonebook st in recyclebin)
             {
                 Console.WriteLine(st);
             }
-            Console.WriteLine("\n[1] Khôi phục ");
-            Console.WriteLine("[2] Xóa vĩnh viễn ");
+            Console.WriteLine("\n1. Khôi phục ");
+            Console.WriteLine("2. Xóa vĩnh viễn ");
             Console.Write("\nChọn yêu cầu của bạn: ");
             string luachon = Console.ReadLine();
             switch (luachon)
@@ -435,11 +436,12 @@ namespace CTDL_GT_project
                     }
                     Console.WriteLine("\nKhôi phục thành công");
                     recyclebin.Clear();
-
+                    Console.WriteLine("Nhấn [Enter] để tiếp tục!");
                     break;
                 case "2":
                     recyclebin.Clear();
                     Console.WriteLine("\nCác liên lạc trong thùng rác đã bị xóa");
+                    Console.WriteLine("Nhấn [Enter] để tiếp tục!");
                     break;
                 default:
                     {
@@ -451,15 +453,15 @@ namespace CTDL_GT_project
             }
         }
 
-        // Gọi điện
+        // Nhật ký
         public void CallLogs(List<Phonebook> callLogs)
         {
             Console.Clear();
             Console.SetCursorPosition((Console.WindowWidth - "NHẬT KÝ CUỘC GỌI".Length) / 2, Console.CursorTop);
             Console.WriteLine("NHẬT KÝ CUỘC GỌI\n");
-            Console.WriteLine("(1)- In nhật ký cuộc gọi: ");
-            Console.WriteLine("(2)- Xóa hết nhật ký cuộc gọi: ");
-            Console.WriteLine("(3)- Xóa 1 nhật ký cuộc gọi: ");
+            Console.WriteLine("(1)- In nhật ký cuộc gọi ");
+            Console.WriteLine("(2)- Xóa hết nhật ký cuộc gọi ");
+            Console.WriteLine("(3)- Xóa 1 nhật ký cuộc gọi ");
             Console.WriteLine("(0)- Thoát");
             Console.Write("\nNhập lựa chọn của bạn: ");
             int count = 0;
@@ -490,7 +492,7 @@ namespace CTDL_GT_project
                     {
                         Console.WriteLine("Đã gọi cho " + callLogs[i].getNumber() + " vào " + callLogs[i].getFacebook());
                     }
-                    Console.Write("Nhập số bạn muốn xóa nhật ký cuộc gọi: ");
+                    Console.Write("\nNhập số bạn muốn xóa khỏi nhật ký cuộc gọi: ");
                     string number = Console.ReadLine();
                     for (int i = 0; i < callLogs.Count; i++)
                     {
@@ -508,7 +510,7 @@ namespace CTDL_GT_project
             CallLogs(callLogs);
         }
 
-        // Nhật ký
+        // Gọi điện
         public void Call(DoubleLinkedList pbook, List<Phonebook> callLogs)
         {
             Console.WriteLine("[Phím 1] - Nhập số để gọi.");
@@ -521,25 +523,46 @@ namespace CTDL_GT_project
             switch (choice)
             {
                 case "1":
+                chinhchinh:
                     Console.Clear();
                     Console.Write("Nhập số điện thoại bạn muốn gọi: ");
                     string number = Console.ReadLine();
-                    t1 = DateTime.Now.Subtract(DateTime.MinValue).TotalSeconds;
-                    Console.Clear();
-                    Console.WriteLine("\nĐang gọi cho " + number + " ...");
-                    Console.Write("\nBấm [Enter] để kết thúc cuộc gọi: ");
-                    Console.ReadLine();
-                    t2 = DateTime.Now.Subtract(DateTime.MinValue).TotalSeconds;
-                    time = Convert.ToString(t2 - t1);
-                    Console.WriteLine("\nThời gian thực hiện cuộc gọi: " + time + " giây");
-                    Console.WriteLine("Thời điểm: {0}", t);
-                    callLogs.Add(new Phonebook("00", "0", number, time, t, "0"));
+                    int Result;
+                    bool isNumber = int.TryParse(number, out Result);
+                    if (isNumber)
+                    {
+                        if (isNumber && number.Length == 10)
+                        {
+                            t1 = DateTime.Now.Subtract(DateTime.MinValue).TotalSeconds;
+                            Console.Clear();
+                            Console.WriteLine("\nĐang gọi cho " + number + " ...");
+                            Console.Write("\nBấm [Enter] để kết thúc cuộc gọi: ");
+                            Console.ReadLine();
+                            t2 = DateTime.Now.Subtract(DateTime.MinValue).TotalSeconds;
+                            time = Convert.ToString(t2 - t1);
+                            Console.WriteLine("\nThời gian thực hiện cuộc gọi: " + time + " giây");
+                            Console.WriteLine("Thời điểm: {0}", t);
+                            callLogs.Add(new Phonebook("00", "0", number, time, t, "0"));
+                        }
+                        else
+                        {
+                            Console.WriteLine("Số điện thoại không hợp lệ! Vui lòng nhập lại!");
+                            Console.ReadKey();
+                            goto chinhchinh;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Số điện thoại không hợp lệ! Vui lòng nhập lại!");
+                        Console.ReadKey();
+                        goto chinhchinh;
+                    }
                     break;
                 case "2":
                     Console.Clear();
                     Console.WriteLine("Danh bạ hiện có: ");
                     pbook.Print();
-                    Console.Write("Nhập tên muốn gọi: ");
+                    Console.Write("\nNhập tên muốn gọi: ");
                     string input = Console.ReadLine();
                     Node node = pbook.Find(input);
                     t1 = DateTime.Now.Subtract(DateTime.MinValue).TotalSeconds;
@@ -559,8 +582,8 @@ namespace CTDL_GT_project
         // Gửi tin nhắn
         public void SendSMS()
         {
-            Console.WriteLine("\n[1] Gửi tin nhắn cho người mới.");
-            Console.WriteLine("[2] Gửi tin nhắn cho người đã có trong danh bạ.");
+            Console.WriteLine("\n1. Gửi tin nhắn cho người mới.");
+            Console.WriteLine("2. Gửi tin nhắn cho người đã có trong danh bạ.");
             Console.Write("\nNhập lựa chọn của bạn: ");
             string choice = Console.ReadLine();
             switch (choice)
@@ -578,7 +601,7 @@ namespace CTDL_GT_project
                         {
                             Console.Write("Nhập nội dung: ");
                             string content = Console.ReadLine();
-                            Console.WriteLine($"Đã gửi tin nhắn đến số điện thoại {number} với nội dung: {content}. \nVào lúc {DateTime.Now}");
+                            Console.WriteLine($"\nĐã gửi tin nhắn đến số điện thoại {number} với nội dung: {content}. \nVào lúc {DateTime.Now}");
                         }
                         else
                         {
@@ -605,18 +628,20 @@ namespace CTDL_GT_project
                     {
                         Console.Write("Nhập nội dung: ");
                         string content1 = Console.ReadLine();
-                        Console.WriteLine($"Đã gửi tin nhắn đến số điện thoại {nickname} với nội dung: {content1}. \nVào lúc {DateTime.Now}");
+                        Console.WriteLine($"\nĐã gửi tin nhắn đến số điện thoại {nickname} với nội dung: {content1}. \nVào lúc {DateTime.Now}");
                     }
                     else
                     {
                         Console.WriteLine("Tên không có trong danh bạ.");
+                        Console.WriteLine("Nhấn [Enter] để tiếp tục!");
+                        Console.ReadKey();
                         goto begin;
                     }
                     break;
             }
         }
 
-        //Sao lưu và khôi phục
+        // Sao lưu và khôi phục
         public void BaR()
         {
         BaR:
@@ -705,7 +730,7 @@ namespace CTDL_GT_project
             Console.WriteLine("(2) - Thêm số vào danh sách.");
             Console.WriteLine("(3) - Xóa số khỏi danh sách.");
             Console.WriteLine("(4) - Thoát khỏi chương trình.");
-            Console.Write("Nhập lựa chọn của bạn: ");
+            Console.Write("\nNhập lựa chọn của bạn: ");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -847,15 +872,15 @@ namespace CTDL_GT_project
             }
         }
 
-        // tìm để in
-        private Node FindLast()
+        // Tìm để in
+        public Node FindLast()
         {
             Node current = header;
             while (!(current.flink == null))
                 current = current.flink;
             return current;
         }
-        // in
+        // In
         public void Print()
         {
             Node current = FindLast();
@@ -900,6 +925,7 @@ namespace CTDL_GT_project
             }
             return privatebook;
         }
+
         public List<Phonebook> GetRecycleBin(string recyclePath)
         {
             List<Phonebook> recycleBin = new List<Phonebook>();
@@ -1046,12 +1072,15 @@ namespace CTDL_GT_project
             Console.Clear();
 
             string DoAn = "ĐỒ ÁN: CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT";
+            string DeTai = "ĐỀ TÀI: DANH SÁCH LIÊN KẾT ĐÔI VÀ ỨNG DỤNG TRONG QUẢN LÝ DANH BẠ";
             string InfoSV = "NHÓM 4 | LỚP: 21C1INF50900703";
             string Separator = "*****************************";
 
             Console.WriteLine();
             Console.SetCursorPosition((Console.WindowWidth - DoAn.Length) / 2, Console.CursorTop);
             Console.WriteLine(DoAn);
+            Console.SetCursorPosition((Console.WindowWidth - DeTai.Length) / 2, Console.CursorTop);
+            Console.WriteLine(DeTai);
             Console.SetCursorPosition((Console.WindowWidth - InfoSV.Length) / 2, Console.CursorTop);
             Console.WriteLine(InfoSV);
             Console.WriteLine();
@@ -1059,7 +1088,7 @@ namespace CTDL_GT_project
             Console.WriteLine(Separator);
             Console.WriteLine();
 
-            Console.WriteLine("[0]  ĐÓNG DANH BẠ\n");
+            Console.WriteLine("[Enter] ĐÓNG DANH BẠ");
             Console.WriteLine("[1]  THÊM LIÊN LẠC VÀO DANH BẠ");
             Console.WriteLine("[2]  XÓA 1 LIÊN LẠC");
             Console.WriteLine("[3]  CHỈNH SỬA THÔNG TIN LIÊN LẠC");
@@ -1260,7 +1289,6 @@ namespace CTDL_GT_project
                     }
                 default: Console.WriteLine("\n Lựa chọn không nằm trong menu. [Enter] để lựa chọn lại"); Console.ReadKey(); goto MENU;
             }
-
         THEEND:
             pbook.Quicksave(filepath, recyclePath, logPath, privatePath, privateBook, recycleBin, callLogs);
             Console.Clear();
